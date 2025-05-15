@@ -1,0 +1,196 @@
+:root {
+    --primary-color: #421708;
+    --completed-color: #bbb;
+    --danger-color: #e94b3c;
+    --success-color: #4caf50;
+    --edit-color: #f0ad4e;
+    --background: #a6d4d1;
+    --text-color: #461507;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-image: url("") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    padding-top: 20px;
+    color: var(--text-color);
+  }
+  
+  #app {
+    background: #87b3e9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+    width: 100%;
+    max-width: 650px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  
+  }
+  
+  h1 {
+    margin: 0 0 15px 0;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--primary-color);
+  }
+  
+  #inputContainer {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  
+  #newTaskInput {
+    flex-grow: 1;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px 0 0 5px;
+    outline-offset: 2px;
+  }
+  
+  #newTaskInput:focus {
+    outline: 3px solid var(--primary-color);
+  }
+  
+  #addTaskBtn {
+    padding: 0 18px;
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s ease;
+  }
+  #addTaskBtn:hover,
+  #addTaskBtn:focus {
+    background: #357abd;
+  }
+  
+  #taskList {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+  }
+  
+  
+  #taskList::-webkit-scrollbar {
+    width: 6px;
+  }
+  #taskList::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+  }
+  #taskList::-webkit-scrollbar-track {
+    background: #eee;
+  }
+  
+  .task {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .task:last-child {
+    border-bottom: none;
+  }
+  
+  .task-text {
+    flex-grow: 1;
+    font-size: 1rem;
+    word-break: break-word;
+  }
+  
+  .task-text.completed {
+    text-decoration: line-through;
+    color: var(--completed-color);
+  }
+  
+  .btn-group {
+    display: flex;
+    gap: 5px;
+  }
+  
+  button.task-btn {
+    border: none;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    user-select: none;
+    transition: background-color 0.2s ease;
+  }
+  
+  button.complete-btn {
+    background-color: var(--success-color);
+    color: #fff;
+  }
+  button.complete-btn:hover,
+  button.complete-btn:focus {
+    background-color: #3a8f40;
+  }
+  
+  button.edit-btn {
+    background-color: var(--edit-color);
+    color: #fff;
+  }
+  button.edit-btn:hover,
+  button.edit-btn:focus {
+    background-color: #d4942e;
+  }
+  
+  button.delete-btn {
+    background-color: var(--danger-color);
+    color: #fff;
+  }
+  button.delete-btn:hover,
+  button.delete-btn:focus {
+    background-color: #b93627;
+  }
+  
+  
+  .edit-input {
+    flex-grow: 1;
+    padding: 6px 10px;
+    font-size: 1rem;
+    border: 2px solid var(--edit-color);
+    border-radius: 5px;
+    outline-offset: 2px;
+  }
+  .edit-input:focus {
+    outline: 3px solid var(--edit-color);
+  }
+  
+  
+  @media (max-width: 400px) {
+    #app {
+      height: 100vh;
+      max-width: 100vw;
+      border-radius: 0;
+      padding: 15px;
+    }
+    #newTaskInput {
+      font-size: 0.95rem;
+    }
+    button.task-btn {
+      font-size: 0.8rem;
+      padding: 5px 8px;
+    }
+  }
